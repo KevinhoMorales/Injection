@@ -21,14 +21,4 @@ class HomeViewModel {
             self?.homeModel = homeModel
         }
     }
-    
-    func getData(completion: @escaping([HomeModel])->()) {
-//        NetworkManager.shared.retrieveData() { homeModel in
-//            completion(homeModel)
-//        }
-        manager.retrieveData { homeModel in
-            completion(homeModel)
-        }
-    }
-    
 }

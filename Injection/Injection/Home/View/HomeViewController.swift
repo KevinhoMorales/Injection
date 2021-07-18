@@ -36,7 +36,7 @@ class HomeViewController: UIViewController {
     }
     
     private func getData() {
-        viewModel.getData { [self] homeModel in
+        viewModel.manager.retrieveData { [self] homeModel in
             DispatchQueue.main.async {
                 viewModel.homeModel = homeModel
                 tableView.reloadData()
@@ -56,6 +56,4 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         cell.setUpCell(homeModel: homeModel)
         return cell
     }
-    
-    
 }
